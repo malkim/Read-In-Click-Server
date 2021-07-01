@@ -3,7 +3,7 @@ var wordRoute = express.Router();
 
 const wordController = require('../controller/getWordController')
 
-wordRoute.get('/getWords', wordController.getWords)
+wordRoute.get('/get/:kind', wordController.getWords)
 // wordRoute.get('/getChirik',wordController.getKamatz )
 // wordRoute.get('/getCholam',wordController.getKamatz )
 // wordRoute.get('/getSegol',wordController.getKamatz )

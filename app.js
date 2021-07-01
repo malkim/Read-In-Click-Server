@@ -50,10 +50,10 @@ const connectionParams = {
   useUnifiedTopology: true
 }
 
-//"mongodb://srv1:27017/Read-In-Click"
+//
 // "mongodb+srv://Shani:sssnnn334@cluster0.3puzv.mongodb.net/Read-In-Click?retryWrites=true&w=majority"
-
-mongoose.connect( "mongodb+srv://Shani:sssnnn334@cluster0.3puzv.mongodb.net/Read-In-Click?retryWrites=true&w=majority", connectionParams)
+// "mongodb+srv://Shani:sssnnn334@cluster0.3puzv.mongodb.net/Read-In-Click?retryWrites=true&w=majority"
+mongoose.connect("mongodb://srv1:27017/Read-In-Click", connectionParams)
   .then(() => {
     console.log("connected to db");
   })
@@ -61,10 +61,5 @@ mongoose.connect( "mongodb+srv://Shani:sssnnn334@cluster0.3puzv.mongodb.net/Read
     console.log("error: " + err);
 
   })
-
-
-app.listen(6666, (req, res) => {
-  console.log('listen-----')
-})
 
 module.exports = app;
