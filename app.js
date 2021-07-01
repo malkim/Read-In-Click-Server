@@ -9,6 +9,8 @@ const wordRoute = require('./routes/wordRoute')
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+const env = require('dotenv');
+env.config();
 
 var app = express();
 
@@ -27,12 +29,12 @@ app.use('/users', usersRouter);
 app.use('/words', wordRoute)
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   next(createError(404));
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
@@ -47,14 +49,22 @@ const connectionParams = {
   useCreateIndex: true,
   useUnifiedTopology: true
 }
-// "mongodb+srv://Shani:<password>@Shani.3puzv.mongodb.net/Read-In-Click?retryWrites=true&w=majority"
-mongoose.connect("mongodb://srv1:27017/Read-In-Click", connectionParams)
+
+//"mongodb://srv1:27017/Read-In-Click"
+// "mongodb+srv://Shani:sssnnn334@cluster0.3puzv.mongodb.net/Read-In-Click?retryWrites=true&w=majority"
+
+mongoose.connect( "mongodb+srv://Shani:sssnnn334@cluster0.3puzv.mongodb.net/Read-In-Click?retryWrites=true&w=majority", connectionParams)
   .then(() => {
-      console.log("connected to db");
+    console.log("connected to db");
   })
   .catch((err) => {
-      console.log("error: " + err);
+    console.log("error: " + err);
 
   })
+
+
+app.listen(6666, (req, res) => {
+  console.log('listen-----')
+})
 
 module.exports = app;
