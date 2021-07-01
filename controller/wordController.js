@@ -40,8 +40,6 @@ const insertCholam = async (req, res) => {
     }
 }
 
-//'בור', 'דוד', 'חור', 'אור', 'צוף', 'זוז', 'סוד', 'סוס', 'בול', 'שום'
-
 const insertShuruk = async (req, res) => {
     try {
         let shuruk = new word('shuruk', ['בור', 'דוד', 'חור', 'אור', 'צוף', 'זוז', 'סוד', 'סוס', 'בול', 'שום'])
@@ -52,6 +50,17 @@ const insertShuruk = async (req, res) => {
         res.send('error')
     }
 }
+const insertSegol = async (req, res) => {
+    try {
+        let segol = new word('segol', ['כס', 'שן', 'הד', 'עד'])
+        await segol.save();
+        res.send('insert segol successfully')
+    }
+    catch{
+        res.send('error')
+    }
+}
+
 module.exports = { insertKamatz, insertChirik, insertCholam }
 
 
