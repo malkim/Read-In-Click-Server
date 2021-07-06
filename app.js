@@ -19,8 +19,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
 app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+Fapp.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -50,10 +49,10 @@ const connectionParams = {
   useUnifiedTopology: true
 }
 
-//
+//"mongodb://localhost:27017/Read-In-Click"
 // "mongodb+srv://Shani:sssnnn334@cluster0.3puzv.mongodb.net/Read-In-Click?retryWrites=true&w=majority"
 // "mongodb+srv://Shani:sssnnn334@cluster0.3puzv.mongodb.net/Read-In-Click?retryWrites=true&w=majority"
-mongoose.connect("mongodb://srv1:27017/Read-In-Click", connectionParams)
+mongoose.connect("mongodb://localhost:27017/Read-In-Click", connectionParams)
   .then(() => {
     console.log("connected to db");
   })
