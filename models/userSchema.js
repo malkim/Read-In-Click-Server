@@ -11,9 +11,9 @@ const userSchema = mongoose.Schema({
     },
     userId: {
         type: String,
-        minlength: 9,
-        maxlength: 9,
-        required: true
+        // minlength: 9,
+        // maxlength: 9,
+        // required: true
     }
 })
 

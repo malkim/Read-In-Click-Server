@@ -1,11 +1,12 @@
 const mongoose = require('mongoose');
-const User = require('userRoute');
+const User = require('userSchema');
 const jwt = require('jsonwebtoken');
 
 const createUser = (req, res) => {
+    console.log("!!!!!");
+    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
     let user = new User(req.body)
     user.save(function (err, user) {
-        res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3001');
         if (err)
             res.status(400).send(err);
         else
